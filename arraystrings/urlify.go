@@ -7,10 +7,13 @@ import (
 
 /*
 	--------------------------------
-	# Hint 53: It's often easiest to modify strings by going
-		from the end ofthe string to the beginning
+	# Hint 53
+	It's often easiest to modify strings by going from the
+	end ofthe string to the beginning
 	--------------------------------
-	# Hint 118: You might find you need to know the number of spaces. Can you just count them?
+	# Hint 118
+	You might find you need to know the number of spaces.
+	Can you just count them?
 	--------------------------------
 */
 

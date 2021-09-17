@@ -6,23 +6,25 @@ import (
 )
 
 /*
-	Hint #1: Done
+	--------------------------------
+	Hint #1
 	Describe what it means for two strings to be permutations
 	of each other.
 	Now, look at that definition you provided.
 	Can you check the strings against that definition?
-
-	Hint #84: Done
+	--------------------------------
+	Hint #84
 	There's one solution that is O(N log N) time.
 	Another solution uses some space but is O(N) time
-
-	Hint #122: Done
+	--------------------------------
+	Hint #122
 	Could a hash table be useful?
-
-	Hint #131: Done
+	--------------------------------
+	Hint #131
 	Two strings that are permutations should have the same
 	characters, but in differente orders.
 	Can you make orders the same?
+	--------------------------------
 */
 
 /*

@@ -2,15 +2,18 @@ package arraystrings
 
 /*
 	--------------------------------
-	# Hint 44: Try a Hash Table
+	# Hint 44
+	Try a Hash Table
 	--------------------------------
-	# Hint 117: Could a bit vector be useful?
+	# Hint 117
+	Could a bit vector be useful?
 	R: We can reduce our space usage by a factor of eight by using a bit vector. We will assume,
 	in the below code that the string only uses the lowercase
 	letters a through z. This will allowus to use just a
 	single int
 	--------------------------------
-	# Hint 132: Can you solve it in O(N log N) time? What might
+	# Hint 132
+	Can you solve it in O(N log N) time? What might
 	a solution like that look like?
 	R: If we cannot use additional data structures, we could:
 
