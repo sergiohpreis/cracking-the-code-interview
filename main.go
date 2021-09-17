@@ -37,6 +37,18 @@ func URLify(m map[string]int) {
 		fmt.Println("My implementation using regex                 ->", arraystrings.URLifyUsingRegex(s, l))
 		ar := strings.Split(s, "")
 		fmt.Println("Book implementation counting spaces           ->", arraystrings.URLifyCountingSpaces(ar, l))
+		fmt.Println()
+	}
+	fmt.Println()
+}
+
+func PalindromePermutation(as []string) {
+	for _, s := range as {
+		fmt.Printf("The string \"%v\" is a palindrome permutation?\n", s)
+		fmt.Println("My implementation using a map         ->", arraystrings.PalindromePermutation(s))
+		fmt.Println("My implementation counting odds       ->", arraystrings.PalindromePermutationCountingOdds(s))
+		fmt.Println("Book implementation using bit vector  ->", arraystrings.PalindromePermutationUsingBitVector(s))
+		fmt.Println()
 	}
 }
 
@@ -57,6 +69,12 @@ func arrayStrings() {
 	})
 	URLify(map[string]int{
 		"Mr John Smith     ": 13,
+	})
+	PalindromePermutation([]string{
+		"Tact Coa",      // taco cat, // atc o cta -> true
+		"dad",           // dad                    -> true
+		"tta e t t",     //                        -> false
+		"tt a t a tt t", // ttt aa ttt, tatt  ttat -> true
 	})
 }
 
