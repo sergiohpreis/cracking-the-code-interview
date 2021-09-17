@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/sergiohpreis/crackingcodeinterview/arraystrings"
 )
@@ -29,6 +30,16 @@ func permutation(aas [][]string) {
 	fmt.Println()
 }
 
+func URLify(m map[string]int) {
+	for s, l := range m {
+		fmt.Printf("URLify the string: \"%v\" (length: %v)\n", s, l)
+		fmt.Println("My implementation using loop and string slice ->", arraystrings.URLifyUsingSplit(s, l))
+		fmt.Println("My implementation using regex                 ->", arraystrings.URLifyUsingRegex(s, l))
+		ar := strings.Split(s, "")
+		fmt.Println("Book implementation counting spaces           ->", arraystrings.URLifyCountingSpaces(ar, l))
+	}
+}
+
 func arrayStrings() {
 	isUnique([]string{
 		"abcd",
@@ -43,6 +54,9 @@ func arrayStrings() {
 		{"abc", "bca"},
 		{"abc", "cbb"},
 		{"abc", "abcd"},
+	})
+	URLify(map[string]int{
+		"Mr John Smith     ": 13,
 	})
 }
 
