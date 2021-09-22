@@ -18,7 +18,7 @@ func isUnique(as []string) {
 	fmt.Println()
 }
 
-func permutation(aas [][]string) {
+func isPermutation(aas [][]string) {
 	for _, as := range aas {
 		fmt.Printf("\"%v\" is a permutation of \"%v\"?\n", as[0], as[1])
 		fmt.Println("My implementation using sort    ->", arraystrings.IsPermutationUsingSort(as[0], as[1]))
@@ -30,7 +30,7 @@ func permutation(aas [][]string) {
 	fmt.Println()
 }
 
-func URLify(m map[string]int) {
+func urlify(m map[string]int) {
 	for s, l := range m {
 		fmt.Printf("URLify the string: \"%v\" (length: %v)\n", s, l)
 		fmt.Println("My implementation using loop and string slice ->", arraystrings.URLifyUsingSplit(s, l))
@@ -42,7 +42,7 @@ func URLify(m map[string]int) {
 	fmt.Println()
 }
 
-func PalindromePermutation(as []string) {
+func isPalindromePermutation(as []string) {
 	for _, s := range as {
 		fmt.Printf("The string \"%v\" is a palindrome permutation?\n", s)
 		fmt.Println("My implementation using a map         ->", arraystrings.PalindromePermutation(s))
@@ -52,13 +52,24 @@ func PalindromePermutation(as []string) {
 	}
 }
 
+func isOneAway(aas [][]string) {
+	for _, as := range aas {
+		fmt.Printf("\"%v\" is one or zero edits away from \"%v\"?\n", as[0], as[1])
+		fmt.Println("My implementation counting chars in a map ->", arraystrings.OneAway(as[0], as[1]))
+		fmt.Println("Book solution                             ->", arraystrings.OneEditAway(as[0], as[1]))
+		fmt.Println("Book solution using single function       ->", arraystrings.OneEditAwaySingle(as[0], as[1]))
+		fmt.Println()
+	}
+	fmt.Println()
+}
+
 func arrayStrings() {
 	isUnique([]string{
 		"abcd",
 		"aabc",
 		"defg",
 	})
-	permutation([][]string{
+	isPermutation([][]string{
 		{"god     ", "dog"},
 		{"god     ", "dog     "},
 		{"Dog", "dog"},
@@ -67,14 +78,20 @@ func arrayStrings() {
 		{"abc", "cbb"},
 		{"abc", "abcd"},
 	})
-	URLify(map[string]int{
+	urlify(map[string]int{
 		"Mr John Smith     ": 13,
 	})
-	PalindromePermutation([]string{
+	isPalindromePermutation([]string{
 		"Tact Coa",      // taco cat, // atc o cta -> true
 		"dad",           // dad                    -> true
 		"tta e t t",     //                        -> false
 		"tt a t a tt t", // ttt aa ttt, tatt  ttat -> true
+	})
+	isOneAway([][]string{
+		{"pale", "ple"},
+		{"pales", "pale"},
+		{"pale", "bale"},
+		{"pale", "bae"},
 	})
 }
 
