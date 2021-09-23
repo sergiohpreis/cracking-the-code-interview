@@ -63,6 +63,18 @@ func isOneAway(aas [][]string) {
 	fmt.Println()
 }
 
+func StringCompression(as []string) {
+	for _, s := range as {
+		fmt.Printf("The string \"%v\" compressed\n", s)
+		fmt.Println("My implementation                               ->", arraystrings.StringCompression(s))
+		fmt.Println("Book bad implementation                         ->", arraystrings.CompressBad(s))
+		fmt.Println("Book implementation using string builder        ->", arraystrings.CompressStringBuilder(s))
+		fmt.Println("Book implementation counting compressed length  ->", arraystrings.CompressStringBuilder(s))
+		fmt.Println()
+	}
+	fmt.Println()
+}
+
 func arrayStrings() {
 	isUnique([]string{
 		"abcd",
@@ -92,6 +104,10 @@ func arrayStrings() {
 		{"pales", "pale"},
 		{"pale", "bale"},
 		{"pale", "bae"},
+	})
+	StringCompression([]string{
+		"aabccccaaa", // a2b1c4a3
+		"aabcccc",    // a2b1c4
 	})
 }
 
